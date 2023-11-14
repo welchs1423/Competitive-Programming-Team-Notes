@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int cnt = sc.nextInt();
+        int[][] param = new int[cnt][2];
+        
+        int whiteWidth = 0;
+        int whiteHeight = 0;
+        
+        for(int i = 0; i < cnt; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            
+            if(whiteWidth < a){
+                whiteWidth = a;
+            }
+            
+            if(whiteHeight < b){
+                whiteHeight = b;
+            }
+            
+            param[i][0] = a;
+            param[i][1] = b;
+        }
+        
+        int[][] white = new int[whiteHeight + 10][whiteWidth + 10];
+        
+        for(int i = 0; i < cnt; i++){
+            for(int j = param[i][0] - 1; j < param[i][0] + 9; j++){
+                for(int k = param[i][1] - 1; k < param[i][1] + 9; k++){
+                    white[k][j] = 1;
+                }
+            }
+        }
+        
+        int answer = 0;
+        
+        for(int i = 0; i < white.length; i++){
+            for(int j = 0; j < white[i].length; j++){
+                if(white[i][j] == 1){
+                    answer++;
+                }
+            }
+        }
+        
+        System.out.println(answer);
+    }
+}
