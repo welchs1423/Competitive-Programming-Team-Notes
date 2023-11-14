@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int cnt = sc.nextInt();
+        Double answer = 0.0;
+        
+        Double[] arr = new Double[cnt];
+        List<Double> list = new ArrayList<Double>();
+        
+        for(int i = 0; i < cnt; i++){
+            Double a = sc.nextDouble();
+            list.add(a);
+            arr[i] = a;
+        }
+        
+        Collections.sort(list, Collections.reverseOrder());
+        
+        for(int i = 0; i < cnt; i++){
+            answer += arr[i] / list.get(0) * 100;
+        }
+        
+        System.out.print(answer / cnt);
+    }
+}
