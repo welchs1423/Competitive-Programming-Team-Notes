@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int maxNum = sc.nextInt();
+        int[] answerArr = new int[maxNum];
+        int answer = 0;
+        
+        for(int i = 0; i < maxNum; i++){
+            answerArr[i] = sc.nextInt();
+        }
+        int compareVal = sc.nextInt();
+        
+        for(int j = 0; j < maxNum; j++){
+            if(answerArr[j] == compareVal){
+                answer++;
+            }
+        }
+        
+        System.out.println(answer);
+        
+    }
+}
