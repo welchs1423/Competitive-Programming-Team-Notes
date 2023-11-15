@@ -1,0 +1,11 @@
+class Solution {
+    public int solution(int n) {
+        int j = 0;
+        for(int k=1;k<n+1;k++){
+            if(n%k==0){
+                j += k;
+            }
+        }
+        return j;
+    }
+}
