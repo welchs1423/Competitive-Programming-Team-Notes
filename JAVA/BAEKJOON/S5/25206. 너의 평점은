@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main{
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        Double scoreGrade = 0.0;
+        Double scoreSum = 0.0;
+        
+        for(int i = 0; i < 20; i++){
+            String subject = sc.next();
+            Double score = sc.nextDouble();
+            String grade = sc.next();
+            
+            if(!grade.equals("P")){
+                scoreSum += score;
+            }
+            
+            if(grade.equals("A+")){
+                scoreGrade += score * 4.5;
+            } else if(grade.equals("A0")){
+                scoreGrade += score * 4.0;
+            } else if(grade.equals("B+")){
+                scoreGrade += score * 3.5;
+            } else if(grade.equals("B0")){
+                scoreGrade += score * 3.0;
+            } else if(grade.equals("C+")){
+                scoreGrade += score * 2.5;
+            } else if(grade.equals("C0")){
+                scoreGrade += score * 2.0;
+            } else if(grade.equals("D+")){
+                scoreGrade += score * 1.5;
+            } else if(grade.equals("D0")){
+                scoreGrade += score * 1.0;
+            } else if(grade.equals("F")){
+                scoreGrade += score * 0;
+            }
+        }
+        System.out
+            .println(Math.round((scoreGrade / scoreSum) * 1000000) / 1000000.0);
+    }
+}
