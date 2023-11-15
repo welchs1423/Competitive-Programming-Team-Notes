@@ -1,0 +1,19 @@
+import java.util.*;
+
+class Solution {
+    public Integer[] solution(int n, int[] numlist) {
+        List<Integer> a = new ArrayList<>();
+        int aa = 0;
+        
+        for(int i = 0; i < numlist.length; i++){
+            if(numlist[i] % n == 0){
+                a.add(numlist[i]);
+                aa++;
+            }
+        }
+        
+        Integer answer[] = a.toArray(new Integer[a.size()]);
+        
+        return answer;
+    }
+}
