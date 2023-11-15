@@ -1,0 +1,21 @@
+class Solution {
+    public int solution(String myString, String pat) {
+        int answer = 0;
+        
+        String reverse = "";
+        
+        for(int i = 0; i < myString.length(); i++){
+            if(Character.toString(myString.charAt(i)).equals("A")){
+                reverse += "B";
+            }else if(Character.toString(myString.charAt(i)).equals("B")){
+                reverse += "A";
+            }
+        }
+        
+        if(reverse.contains(pat)){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+}
