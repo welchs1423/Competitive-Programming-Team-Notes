@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        
+        int[] rowArr = new int[row];
+        
+        for(int i = 0; i < col; i++){
+            int stNum = sc.nextInt() - 1;
+            int endNum = sc.nextInt() - 1;
+            int ballNum = sc.nextInt();
+            
+            for(int j = stNum; j <= endNum; j++){
+                rowArr[j] = ballNum;
+            }
+        }
+        
+        for(int i = 0; i < rowArr.length; i++){
+            System.out.print(rowArr[i]);
+            if(i != rowArr.length -1){
+                System.out.print(" ");
+            }
+        }
+    }
+}
