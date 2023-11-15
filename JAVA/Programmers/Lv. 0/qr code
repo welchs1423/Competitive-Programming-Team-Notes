@@ -1,0 +1,23 @@
+class Solution {
+    public String solution(int q, int r, String code) {
+        String answer = "";
+        
+        int a = 0;
+        char b = ' ';
+        
+        if(code.length() % q == 0){
+            a = code.length() / q;
+        }else{
+            a = (code.length() / q) + 1;
+        }
+        
+        String[] Q = new String[a];
+        
+        for(int i = r; i<code.length(); i = i + q){
+            b = code.charAt(i);
+            answer += b;
+        }
+        
+        return answer;
+    }
+}
