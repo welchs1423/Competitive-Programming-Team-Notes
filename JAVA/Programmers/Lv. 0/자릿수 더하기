@@ -1,0 +1,16 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        char a = ' ';
+        
+        String aa = String.valueOf(n);
+        
+        for(int i = 0; i<aa.length(); i++){
+            a = aa.charAt(i);
+            answer += a - '0';
+        }
+        
+        return answer;
+    }
+}
