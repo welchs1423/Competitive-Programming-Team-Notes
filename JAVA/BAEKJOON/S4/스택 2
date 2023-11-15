@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		
+		Stack<Integer> stack = new Stack<>();
+		
+		int cnt = sc.nextInt();
+		
+		for(int i = 0; i < cnt; i++){
+		    
+		    int a = sc.nextInt();
+		    
+            switch(a){
+                case 1 : stack.push(sc.nextInt()); break;
+                case 2 : sb.append(stack.isEmpty() ? -1 : stack.pop()).append("\n"); break;
+                case 3 : sb.append(stack.size()).append("\n"); break;
+                case 4 : sb.append(stack.isEmpty() ? 1 : 0).append("\n"); break;
+                case 5 : sb.append(stack.isEmpty() ? -1 : stack.peek()).append("\n"); break;
+            }
+		}
+		
+		System.out.println(sb);
+	}
+}
