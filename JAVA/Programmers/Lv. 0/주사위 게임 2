@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int a, int b, int c) {
+        int answer = 0;
+        
+        int[] sameChk = {a,b,c};
+        
+        sameChk = Arrays.stream(sameChk).distinct().toArray();
+        
+        if(sameChk.length == 1){
+            answer = (a + b + c) * (a * a + b * b + c * c) * (a * a * a + b * b * b + c * c * c);
+        }else if(sameChk.length == 2){
+            answer = (a + b + c) * (a * a + b * b + c * c);
+        }else if(sameChk.length == 3){
+            answer = a + b + c; 
+        }
+        
+        return answer;
+    }
+}
