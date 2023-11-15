@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        String nn = Integer.toString(n);
+        for(int i=0; i<nn.length();i++){
+           String nnn = nn.substring(i,i+1);
+           int nnnn = Integer.parseInt(nnn);
+            answer += nnnn;
+        }
+        
+        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+        System.out.println(nn.length());
+
+        return answer;
+    }
+}
