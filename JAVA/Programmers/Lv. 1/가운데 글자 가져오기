@@ -1,0 +1,20 @@
+class Solution {
+    public String solution(String s) {
+        
+        int i =0;
+		int j =0;
+
+		if(s.length()%2==0){
+			i = s.length()/2-1;
+			j = s.length()/2+1;
+            s = s.substring(i,j);
+        }else if(s.length()%2==1){
+        	i = s.length()/2;
+    		j = s.length()/2+1;
+    		s=s.substring(i,j);
+        }
+        
+
+        return s;
+    }
+}
