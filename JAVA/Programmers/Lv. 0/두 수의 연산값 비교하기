@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int a, int b) {
+        
+        String alpha = String.valueOf(a);
+        String bravo = String.valueOf(b);
+        
+        int Charlie = Integer.parseInt(alpha + bravo);         
+        
+        if(Charlie > 2 * a * b){
+            return Charlie;
+        }else{
+            return 2* a* b;
+        }
+    }
+}
