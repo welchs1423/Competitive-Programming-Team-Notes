@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] arr, int[][] queries) {
+        int[] answer = new int[queries.length];
+        
+        for(int i = 0; i < queries.length; i++){
+            int[] b = Arrays.copyOfRange(arr, queries[i][0], queries[i][1]+1);
+            Arrays.sort(b);
+            for(int j = 0; j < b.length; j++){
+                if(b[j] > queries[i][2]){
+                    answer[i] = b[j];
+                    break;
+                }else{
+                    answer[i] = -1;
+                }                  
+            }
+        }
+        
+        return answer;
+    }
+}
