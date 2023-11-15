@@ -1,0 +1,15 @@
+class Solution {
+    public String solution(String cipher, int code) {
+        String answer = "";
+        int code1 = code - 1;
+        char aa = ' ';
+        for(int i = 0; i < cipher.length(); i++){
+            if(i == code1 || i % code == code1){
+                aa = cipher.charAt(i);
+                answer += aa;
+            }
+        }
+        
+        return answer;
+    }
+}
