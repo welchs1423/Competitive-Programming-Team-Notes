@@ -1,0 +1,19 @@
+class Solution {
+    public long solution(long n) {
+        
+        long answer = 0;
+        
+        double result = Math.sqrt(n);
+        
+        double result2 = Math.ceil(result);
+        
+        if(result == result2){
+            answer = (long)(result+1) * (long)(result+1);
+        }else{
+            answer = -1;
+        }
+        
+       
+        return answer;
+    }
+}
