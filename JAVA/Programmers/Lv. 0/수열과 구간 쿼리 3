@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public ArrayList solution(int[] arr, int[][] queries) {
+        int[] answer = arr;
+        
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        for(int i = 0; i<answer.length; i++){
+
+          arrayList.add(answer[i]);
+
+        }
+        
+        for(int i = 0; i<queries.length; i++){
+            Collections.swap(arrayList, queries[i][0], queries[i][1]);
+        }
+
+       
+        
+        
+        return arrayList;
+    }
+}
+
+
+    
