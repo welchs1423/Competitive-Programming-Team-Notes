@@ -1,0 +1,13 @@
+import java.util.*;
+
+class Solution {
+    public List solution(String my_string) {
+        String[] answer = my_string.split(" ");
+        
+        List<String> answerList = new ArrayList<>(Arrays.asList(answer));
+        
+        answerList.removeAll(Arrays.asList(""));
+        
+        return answerList;
+    }
+}
