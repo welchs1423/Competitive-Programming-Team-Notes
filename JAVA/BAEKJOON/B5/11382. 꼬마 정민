@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+        
+        String a = sc.nextLine();
+        Long answer = 0L;
+        String answerArray[] = a.split(" ");
+        
+        for(int i = 0; i < answerArray.length; i++){
+            answer += Long.parseLong(answerArray[i]);
+        }
+        
+		System.out.println(answer);
+	}
+}
