@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        String[] paramArray = s.split("\\s");
+
+        for(int i=0; i<paramArray.length;i++){ 
+            if("Z".equals(paramArray[i])){
+                paramArray[i-1] = "0";
+                paramArray[i] = "0";
+            }
+            
+        }
+        
+        for(int j = 0; j<paramArray.length;j++){
+            answer = answer + Integer.parseInt(paramArray[j]);
+        }
+        
+        return answer;
+    }
+}
