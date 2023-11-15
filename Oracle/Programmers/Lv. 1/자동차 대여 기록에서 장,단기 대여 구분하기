@@ -1,0 +1,12 @@
+-- 코드를 입력하세요
+SELECT HISTORY_ID
+, CAR_ID
+, to_CHAR(start_date, 'YYYY-MM-DD') AS START_DATE
+, TO_CHAR(end_date, 'YYYY-MM-DD') AS END_DATE
+, CASE WHEN TO_DATE(TO_CHAR(END_DATE+1,'YYYY-MM-DD'),'YYYY-MM-DD') - TO_DATE(TO_CHAR(START_DATE,'YYYY-MM-DD'),'YYYY-MM-DD') >= 30 THEN '장기 대여'
+       ELSE '단기 대여'
+       END AS RENT_TYPE
+--, TO_DATE(TO_CHAR(END_DATE,'YYYY-MM-DD'),'YYYY-MM-DD') - TO_DATE(TO_CHAR(START_DATE,'YYYY-MM-DD'),'YYYY-MM-DD')
+from car_rental_company_rental_history
+where to_char(start_date,'YYYYMM') = '202209'
+ORDER BY HISTORY_ID desc;
