@@ -1,0 +1,19 @@
+class Solution {
+    public int solution(int num1, int num2) {
+        
+        int answer = 0;
+        double answer2 = 0.0;
+        
+        double a = (double)num1;
+        double b = (double)num2;
+        
+        boolean first = 0<num1 && num1 <=100;
+        boolean second = 0<num2 && num2 <=100;
+        
+        if(first == true && second == true){
+            answer2 = a/b * 1000;
+        }
+        
+        return (int) Math.floor(answer2);
+    }
+}
