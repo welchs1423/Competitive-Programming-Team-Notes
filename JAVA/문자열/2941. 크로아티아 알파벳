@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		String[] cAlphabet = {"c=","c-","dz=","d-","lj","nj","s=","z="};
+		int cnt = 0;
+		Scanner sc = new Scanner(System.in);
+		String param = sc.next();
+		
+		for(int i = 0; i < cAlphabet.length; i++){
+		    for(int j = 0; j < param.length() - cAlphabet[i].length() + 1; j++){
+		        if(param.substring(j, cAlphabet[i].length() + j).equals(cAlphabet[i])){
+		            param = param.replaceFirst(cAlphabet[i]," ");
+		            cnt++;
+		        }
+		    }
+		}
+		    param = param.replace(" ", "");
+	        System.out.println(cnt + param.length());
+	}
+}
