@@ -1,0 +1,40 @@
+class Solution {
+    public int solution(String[][] board, int h, int w) {
+        int answer = 0;
+        int boardLength = board.length;
+        String answerColor = board[h][w];
+        String[] compareArray = new String[4];
+        
+        if(h == 0){
+            compareArray[0] = "";
+        }else{
+            compareArray[0] = board[h - 1][w];
+        }
+        
+        if(w == boardLength - 1){
+            compareArray[1] = "";
+        }else{
+            compareArray[1] = board[h][w + 1];
+        }
+        
+        if(h == boardLength - 1){
+            compareArray[2] = "";
+        }else{
+            compareArray[2] = board[h + 1][w];
+        }
+        
+        if(w == 0){
+            compareArray[3] = "";
+        }else{
+            compareArray[3] = board[h][w - 1];
+        }
+        
+        for(int i = 0; i < compareArray.length; i++){
+            if(compareArray[i].equals(answerColor)){
+                answer++;
+            }
+        }
+        
+        return answer;
+    }
+}
