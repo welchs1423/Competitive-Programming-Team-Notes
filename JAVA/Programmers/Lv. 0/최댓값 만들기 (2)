@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        
+        int pAnswer = 0;
+        int nAnswer = 0;
+                  
+        List<Integer> nNumber = new ArrayList<Integer>();
+        List<Integer> pNumber = new ArrayList<Integer>();
+        
+        for(int i = 0; i < numbers.length; i++){
+            if(numbers[i] > 0){
+                pNumber.add(numbers[i]);
+            }else if(numbers[i] <= 0){
+                nNumber.add(numbers[i]);
+            }
+        }
+        
+        if(nNumber.size() >= 2){
+            Collections.sort(nNumber);
+            nAnswer = nNumber.get(0) * nNumber.get(1);
+        }
+        
+        if(pNumber.size() >= 2){
+            Collections.sort(pNumber, Collections.reverseOrder());
+            pAnswer = pNumber.get(0) * pNumber.get(1);
+        }
+        
+        if(nNumber.size() == 1 && pNumber.size() == 1){
+            nAnswer = pNumber.get(0) * nNumber.get(0);
+            pAnswer = pNumber.get(0) * nNumber.get(0);
+        }
+        
+        return pAnswer > nAnswer ? pAnswer : nAnswer;
+    }
+}
