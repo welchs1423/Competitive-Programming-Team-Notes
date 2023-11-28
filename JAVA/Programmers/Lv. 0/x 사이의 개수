@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(String myString) {
+
+        List<String> splitList = Arrays.asList(myString.split("x"));
+        List<Integer> aa = new ArrayList<Integer>();
+        
+        for(int i = 0; i < splitList.size(); i++){
+            aa.add(splitList.get(i).length());
+        }
+        
+        if(myString.charAt(myString.length() - 1) == 'x'){
+            aa.add(0);
+        }
+        
+        int[] answer = new int[aa.size()];
+        
+        for(int i = 0; i < answer.length; i++){
+            answer[i] = aa.get(i);
+        }
+        
+        return answer;
+    }
+}
