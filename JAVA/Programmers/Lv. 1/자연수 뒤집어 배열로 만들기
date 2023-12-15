@@ -1,0 +1,16 @@
+class Solution {
+    public int[] solution(long n) {
+        
+        int length = (int)(Math.log10(n)+1);
+        
+        int[] answer = new int[length];
+        
+        String param = String.valueOf(n);
+        
+        for(int i = 0; i < length; i++){
+            answer[i] = param.charAt(param.length() - (1 + i)) - '0';
+        }
+        
+        return answer;
+    }
+}
