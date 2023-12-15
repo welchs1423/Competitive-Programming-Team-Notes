@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public List<Integer> solution(int[] numbers, String direction) {
+        
+        Integer[] b = Arrays.stream(numbers).boxed().toArray(Integer[]::new);
+        
+        List<Integer> answerList = new ArrayList<Integer>(Arrays.asList(b));
+        
+        if(direction.equals("right")){
+            answerList.remove(numbers[numbers.length - 1]);
+            answerList.add(0, numbers[numbers.length - 1]);
+        }else if(direction.equals("left")){
+            answerList.remove(0);
+            answerList.add(numbers.length - 1, numbers[0]);
+        }
+        
+        return answerList;
+    }
+}
