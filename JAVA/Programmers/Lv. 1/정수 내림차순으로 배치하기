@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public long solution(long n) {
+        String nn = String.valueOf(n);
+        
+        String mm = "";
+        
+        List<Integer> aa = new ArrayList<Integer>();
+        
+        for(int i = 0; i < nn.length(); i++){
+            aa.add(Integer.valueOf(nn.charAt(i) - '0'));
+        }
+        
+        Collections.sort(aa, Collections.reverseOrder());
+        
+        for(int i = 0; i < aa.size(); i++){
+            mm += String.valueOf(aa.get(i));
+        }
+        
+        return Long.valueOf(mm);
+    }
+}
