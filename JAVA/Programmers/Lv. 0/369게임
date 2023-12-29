@@ -1,0 +1,18 @@
+class Solution {
+    public int solution(int order) {
+        
+        String a = Integer.toString(order);
+        
+        int answer = 0;
+        
+        for(int i = 0; i < a.length(); i++){
+            
+            String aa = Character.toString(a.charAt(i));
+            
+            if(aa.equals("3") || aa.equals("6") || aa.equals("9")){
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
