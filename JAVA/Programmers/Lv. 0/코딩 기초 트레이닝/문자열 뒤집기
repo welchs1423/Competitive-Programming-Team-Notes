@@ -1,0 +1,16 @@
+class Solution {
+    public String solution(String my_string, int s, int e) {
+        String A = my_string.substring(0, s);
+        String B = my_string.substring(s, e + 1);
+        String C = my_string.substring(e + 1, my_string.length());
+
+        String temp = "";
+
+        for(int i = B.length()-1; i >= 0; i--){
+            String a = Character.toString(B.charAt(i));
+            temp += a;
+        }
+
+        return A + temp + C;
+    }
+}
