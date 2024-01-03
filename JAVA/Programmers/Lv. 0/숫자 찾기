@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int num, int k) {
+        String aanswer = num + "";  
+        char kk = (char)(k + '0');
+        int answer = -1;
+        for(int i = 0; i < aanswer.length(); i++){
+            if(aanswer.charAt(i) == kk){
+                answer = i + 1;
+                break;
+            }
+        }
+        
+        return answer;
+    }
+}
