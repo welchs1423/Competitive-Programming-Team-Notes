@@ -1,0 +1,15 @@
+class Solution {
+    public String solution(int n) {
+        String answer = "수";
+        int cnt = 0;
+        while(cnt < n - 1){
+            if(cnt % 2 == 1){
+                answer += "수";
+            }else if(cnt % 2 == 0){
+                answer += "박";
+            }
+            cnt++;
+        }
+        return answer;
+    }
+}
