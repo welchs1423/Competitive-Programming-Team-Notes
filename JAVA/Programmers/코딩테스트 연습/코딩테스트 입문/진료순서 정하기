@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] emergency) {
+        int[] answer = new int[emergency.length];
+        
+        List<Integer> answerList = new ArrayList<Integer>();
+        
+        for(int i = 0; i < emergency.length; i++){
+            answerList.add(emergency[i]);
+        }
+        
+        Collections.sort(answerList, Collections.reverseOrder());
+        
+        for(int i = 0; i < emergency.length; i++){
+            answer[i] = answerList.indexOf(emergency[i]) + 1;
+        }
+        
+        return answer;
+    }
+}
