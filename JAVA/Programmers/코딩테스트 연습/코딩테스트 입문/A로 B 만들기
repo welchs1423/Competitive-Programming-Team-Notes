@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String before, String after) {
+        
+        List<String> beforeList = new ArrayList<String>();
+        List<String> afterList = new ArrayList<String>();
+        
+        for(int i = 0; i < before.length(); i++){
+            beforeList.add(String.valueOf(before.charAt(i)));
+            afterList.add(String.valueOf(after.charAt(i)));
+        }
+        
+        Collections.sort(beforeList);
+        Collections.sort(afterList);
+        
+        before = "";
+        after = "";
+        
+        for(int i = 0; i < beforeList.size(); i++){
+            before += beforeList.get(i);
+            after += afterList.get(i);
+        }
+        
+        if(before.equals(after)){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+}
