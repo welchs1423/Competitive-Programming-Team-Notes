@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		StringBuilder sb = new StringBuilder();
+
+		int cnt = Integer.parseInt(st.nextToken());
+
+		List<Integer> aa = new ArrayList<Integer>();
+
+		for(int i = 0; i < cnt; i++){
+			StringTokenizer st2 = new StringTokenizer(br.readLine(), " ");
+			aa.add(Integer.parseInt(st2.nextToken()));
+		}
+
+		Collections.sort(aa);
+
+		for(int i = 0; i < cnt; i++){
+			sb.append(aa.get(i) + " \n");
+		}
+
+		System.out.println(sb);
+	}
+}
