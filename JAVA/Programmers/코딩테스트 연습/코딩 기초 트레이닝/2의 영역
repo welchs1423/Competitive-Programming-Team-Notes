@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Solution {
+    public List<Integer> solution(int[] arr) {
+        
+        List<Integer> arrList = new ArrayList<Integer>();
+
+		int arrLength = arr.length;
+
+		for (int i = 0; i < arrLength; i++) {
+			arrList.add(arr[i]);
+		}
+
+		if(!arrList.contains(2)){
+			arrList.clear();
+			arrList.add(-1);
+		}else{
+			while (arrList.get(0) != 2) {
+				arrList.remove(0);
+			}
+
+			while (arrList.get(arrList.size() - 1) != 2) {
+				arrList.remove(arrList.size() - 1);
+			}
+		}
+
+		return arrList;
+    }
+}
