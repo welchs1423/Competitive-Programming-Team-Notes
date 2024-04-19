@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] array) {
+        int answer = 0;
+        
+        String[] strArr = new String[array.length];
+        
+        for(int i = 0; i < array.length; i++){
+            strArr[i] = String.valueOf(array[i]);
+        }
+        
+        List<Character> charList = new ArrayList<Character>();
+        
+        for(int i = 0; i < strArr.length; i++){    
+            for(int j = 0; j < strArr[i].length(); j++){
+                charList.add(strArr[i].charAt(j));
+            }
+        }
+        
+        int charListSize = charList.size();
+        
+        for(int i = 0; i < charListSize; i++){
+            if(charList.get(i) == '7'){
+                answer++;
+            }
+        }
+                
+        return answer;
+    }
+}
