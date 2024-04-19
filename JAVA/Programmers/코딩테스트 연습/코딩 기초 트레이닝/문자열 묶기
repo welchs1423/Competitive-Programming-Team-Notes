@@ -1,0 +1,16 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String[] strArr) {
+        int answer = 0;
+        
+        Map<Integer, Integer> arrMap = new HashMap<Integer, Integer>();
+        
+        for(int i = 0; i < strArr.length; i++){
+            int strArrLength = strArr[i].length();
+            arrMap.put(strArrLength, arrMap.get(strArrLength) == null ? 1 : arrMap.get(strArrLength) + 1);
+        }
+        
+        return Collections.max(arrMap.values());
+    }
+}
