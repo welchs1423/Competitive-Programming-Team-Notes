@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Solution {
+    public List<String> solution(String[] str_list) {        
+        int str_listLength = str_list.length;
+        
+        List<String> strList = new ArrayList<String>();
+        
+        String flag = "";
+        
+        for(int i = 0; i < str_listLength; i++){
+            if(str_list[i].equals("l")){
+                flag = "l";
+                break;
+            }else if(str_list[i].equals("r")){
+                flag = "r";
+                break;
+            }
+        }
+        
+        int idx = Arrays.asList(str_list).indexOf(flag);
+        
+        if("r".equals(flag)){
+            
+            for(int i = idx + 1; i < str_listLength; i++){
+                strList.add(str_list[i]);
+            }
+        }else if("l".equals(flag)){
+        
+            for(int i = 0; i < idx; i++){
+                strList.add(str_list[i]);
+            }
+        }
+        
+        return strList;
+    }
+}
