@@ -1,0 +1,15 @@
+class Solution {
+    public String solution(String myString, String pat) {
+        String answer = "";
+        int myStringLength = myString.length();
+        int patLength = pat.length();
+        
+        for(int i = 0; i < myStringLength; i++){
+            answer = myString.substring(0, myStringLength - i);
+            if(answer.endsWith(pat)){
+                return answer;
+            }
+        }
+        return answer;
+    }
+}
