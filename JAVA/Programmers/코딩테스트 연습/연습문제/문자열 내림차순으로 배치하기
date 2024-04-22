@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        
+        List<String> answerList = new ArrayList<String>();
+        
+        for(int i = 0; i < s.length(); i++){
+            answerList.add(String.valueOf(s.charAt(i)));
+        }
+        
+        Collections.sort(answerList, Collections.reverseOrder());
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i < answerList.size(); i++){
+            sb.append(answerList.get(i));
+        }
+        
+        return sb.toString();
+    }
+}
