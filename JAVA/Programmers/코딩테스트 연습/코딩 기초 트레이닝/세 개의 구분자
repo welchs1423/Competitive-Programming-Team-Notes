@@ -1,0 +1,33 @@
+import java.util.*;
+
+class Solution {
+    public String[] solution(String myStr) {
+        
+        int myStrLength = myStr.length();
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i < myStrLength; i++){
+            char comp = myStr.charAt(i);
+            if(comp == 'a' || comp == 'b' || comp == 'c'){
+                sb.append(" ");
+            }else{
+                sb.append(String.valueOf(comp)); 
+            }
+        }
+        
+        List<String> answerList = new ArrayList<String>(Arrays.asList(sb.toString().split(" ")));
+        
+        while(answerList.contains("")){
+            answerList.remove("");
+        }
+        
+        if(answerList.size() == 0){
+            answerList.add("EMPTY");
+        }
+        
+        String[] answer = answerList.toArray(new String[answerList.size()]);
+        
+        return answer;
+    }
+}
