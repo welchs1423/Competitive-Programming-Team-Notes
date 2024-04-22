@@ -1,0 +1,22 @@
+class Solution {
+    public String solution(String s) {
+        int a = Integer.MAX_VALUE;
+        int b = Integer.MIN_VALUE;
+        
+        String[] arr = s.split(" ");
+        int arrLength = arr.length;
+        
+        for(int i = 0; i < arrLength; i++){
+            int comp = Integer.parseInt(arr[i]);
+            if(a > comp){
+                a = comp;
+            }
+            
+            if(b < comp){
+                b = comp;
+            }
+        }
+        
+        return a + " " + b;
+    }
+}
