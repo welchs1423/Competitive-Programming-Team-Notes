@@ -1,0 +1,18 @@
+class Solution {
+    public int solution(String[] order) {
+        int answer = 0;
+        
+        for(int i = 0; i < order.length; i++){
+            
+            String menu = order[i];
+            
+            if("anything".equals(menu) || menu.contains("americano")){
+                answer += 4500;
+            }else if(menu.contains("latte")){
+                answer += 5000;
+            }
+        }
+        
+        return answer;
+    }
+}
