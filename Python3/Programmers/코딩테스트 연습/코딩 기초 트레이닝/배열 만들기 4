@@ -1,0 +1,20 @@
+def solution(arr):
+    stk = []
+    
+    idx = 0;
+    
+    arrSize = len(arr)
+    
+    while idx < arrSize:
+        if len(stk) == 0:
+            stk.append(arr[idx])
+            idx = idx + 1
+            continue
+        elif len(stk) > 0 and stk[-1] < arr[idx]:
+            stk.append(arr[idx])
+            idx = idx + 1
+            continue
+        elif len(stk) > 0 and stk[-1] >= arr[idx]:
+            stk.pop()
+            continue
+    return stk
